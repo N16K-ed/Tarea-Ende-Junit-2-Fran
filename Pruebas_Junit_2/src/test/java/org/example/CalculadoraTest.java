@@ -73,6 +73,33 @@ class CalculadoraTest {
 
         // Caso 5: a, b y c son iguales
         assertEquals(7, calculadora.maximo(7, 7, 7));
+
+        // Caso 6: Todos negativos, c es el mayor
+        assertEquals(-1, calculadora.maximo(-5, -10, -1));
+
+        // Caso 7: Todos negativos, a es el mayor
+        assertEquals(-2, calculadora.maximo(-2, -5, -10));
+
+        // Caso 8: Todos negativos, b es el mayor
+        assertEquals(-3, calculadora.maximo(-10, -3, -5));
+
+        // Caso 9: b es igual a c y ambos son mayores que a
+        assertEquals(5, calculadora.maximo(3, 5, 5));
+    }
+
+    @Test
+    void maximoRamaB() {
+        // Caso 1: b es estrictamente mayor que a y c
+        assertEquals(15, calculadora.maximo(10, 15, 5));
+
+        // Caso 2: b es igual a a y mayor que c
+        assertEquals(10, calculadora.maximo(10, 10, 5));
+
+        // Caso 3: b es igual a c y mayor que a
+        assertEquals(10, calculadora.maximo(5, 10, 10));
+
+        // Caso 4: b es igual a a y a c
+        assertEquals(7, calculadora.maximo(7, 7, 7));
     }
 
     @Test
