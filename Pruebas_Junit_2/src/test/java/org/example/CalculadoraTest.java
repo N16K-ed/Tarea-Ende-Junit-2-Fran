@@ -1,6 +1,5 @@
 package org.example;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,12 +41,14 @@ class CalculadoraTest {
 
     @Test
     void division() {
-        try{
-            assertEquals(2, calculadora.division(6, 3));
-            assertEquals(0, calculadora.division(0, 5));
-        } catch (IllegalArgumentException e) {
-            fail("No se esperaba una excepción: " + e.getMessage());
-        }
+        assertEquals(2, calculadora.division(6, 3));
+        assertEquals(0, calculadora.division(0, 5));
+        assertEquals(-2, calculadora.division(-6, 3));
+    }
+
+    @Test
+    void divisionPorCero() {
+        assertThrows(IllegalArgumentException.class, () -> calculadora.division(5, 0));
     }
 
     @Test
