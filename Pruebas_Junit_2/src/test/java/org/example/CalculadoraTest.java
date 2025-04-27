@@ -52,6 +52,8 @@ class CalculadoraTest {
 
     @Test
     void esPar() {
+        assertTrue(calculadora.esPar(4));
+        assertFalse(calculadora.esPar(5));
     }
 
     @Test
