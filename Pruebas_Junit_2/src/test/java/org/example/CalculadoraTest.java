@@ -21,16 +21,23 @@ class CalculadoraTest {
         calculadora = null;
     }
 
+
     @Test
     void suma() {
+        assertEquals(5, calculadora.suma(2, 3));
+        assertEquals(-1, calculadora.suma(-2, 1));
     }
 
     @Test
     void resta() {
+        assertEquals(1, calculadora.resta(3, 2));
+        assertEquals(-3, calculadora.resta(-2, 1));
     }
 
     @Test
     void multiplicacion() {
+        assertEquals(6, calculadora.multiplicacion(2, 3));
+        assertEquals(0, calculadora.multiplicacion(0, 5));
     }
 
     @Test
