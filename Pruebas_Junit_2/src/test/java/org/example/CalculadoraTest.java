@@ -42,6 +42,12 @@ class CalculadoraTest {
 
     @Test
     void division() {
+        try{
+            assertEquals(2, calculadora.division(6, 3));
+            assertEquals(0, calculadora.division(0, 5));
+        } catch (IllegalArgumentException e) {
+            fail("No se esperaba una excepción: " + e.getMessage());
+        }
     }
 
     @Test
